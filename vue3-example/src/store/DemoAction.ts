@@ -2,8 +2,11 @@ import {IDemo} from "@/store/DemoBO";
 
 function incrementCount(state: IDemo) {
   return () => {
-    state.count += state.count;
-    console.log("DemoAction state count ", state.count);
+    console.log("DemoAction state count state ", JSON.stringify(state));
+    console.log("DemoAction state count 1 ", state.count);
+    state.count = state.count + 1;
+    // state.count += state.count;
+    console.log("DemoAction state count 2 ", state.count);
     return state.count
   };
 }
